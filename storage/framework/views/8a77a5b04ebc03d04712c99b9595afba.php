@@ -845,35 +845,45 @@
 
 <!-- Wings Section -->
 <section id="wings">
-    <h2 class="section-title">Departments of MASA</h2>
-    <div class="wings-grid">
-        <div class="card">
-            <div class="card-icon">📚</div>
-            <h3>Literary Wing</h3>
-            <p>Conducting debates, article writing, speech contests, and general knowledge updates to keep minds sharp.</p>
+        <h2 class="section-title">The Seven Wings of MASA</h2>
+        <div class="wings-grid">
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>cultural Sphere</h3>
+                <p></p>
+            </div>
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Literary Wing</h3>
+                <p></p>
+            </div>
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Library Wing</h3>
+                <p></p>
+            </div>
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Media & IT Wing</h3>
+                <p></p>
+            </div>
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Sports & Health Wing</h3>
+                <p></p>
+            </div>
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Creative Cummune</h3>
+                <p></p>
+            </div>
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Social Affairs</h3>
+                <p></p>
+            </div>
         </div>
-        <div class="card">
-            <div class="card-icon">📖</div>
-            <h3>Library Wing</h3>
-            <p>Managing the student library, recommending new educational contents, and running book reviews.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">🎭</div>
-            <h3>Cultural Sphere</h3>
-            <p>Organizing Islamic arts festivals, nasheed assemblies, and spiritual community activities.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">🎤</div>
-            <h3>Media Wing</h3>
-            <p>Publishing the campus newsletter, college news bulletins, and managing design outputs.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">🏥</div>
-            <h3>Welfare & Social</h3>
-            <p>Organizing medical camps, blood donation drives, and assisting students in need.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
 <!-- Stats Section -->
 <section class="stats">
@@ -901,69 +911,55 @@
 
 <!-- Union Cabinet Section -->
 <section id="cabinet">
-    <h2 class="section-title">MASA Union Cabinet</h2>
-    <div class="cabinet-grid">
-        <!-- President -->
-        <div class="cabinet-card">
-            <div class="cabinet-avatar">U</div>
-            <h3>Mahmood Sufair Haithami</h3>
-            <div class="cabinet-role">Principal / President</div>
-            <p class="cabinet-year">Ex-Officio Chairman</p>
+        <h2 class="section-title">Union Cabinet (2026-2027)</h2>
+        <div class="cabinet-grid">
+            <div class="cabinet-card">
+                <div class="cabinet-avatar">FA</div>
+                <h3>Fayiz V A</h3>
+                <div class="cabinet-role">Chairman</div>
+                <p class="cabinet-year">Final Year Digree
+            </div>
+            <div class="cabinet-card">
+                <div class="cabinet-avatar">AJ</div>
+                <h3>Abdul Javad</h3>
+                <div class="cabinet-role">Convinor</div>
+                <p class="cabinet-year">Third Year Digree
+            </div>
+            <div class="cabinet-card">
+                <div class="cabinet-avatar">BL</div>
+                <h3>Bilal K R</h3>
+                <div class="cabinet-role">Treasurer</div>
+                <p class="cabinet-year">Second Year Degree</p>
+            </div>
+            <div class="cabinet-card">
+                <div class="cabinet-avatar">SW</div>
+                <h3>Swalih</h3>
+                <div class="cabinet-role">Vice Chairman</div>
+                <p class="cabinet-year">Final Year Digree
+            </div>
+            <div class="cabinet-card">
+                <div class="cabinet-avatar">SH</div>
+                <h3>Shamnad</h3>
+                <div class="cabinet-role">Vice Chairman</div>
+                <p class="cabinet-year">Third Year Digree
+            </div>
+            <div class="cabinet-card">
+                <div class="cabinet-avatar">IB</div>
+                <h3>Ibrahim</h3>
+                <div class="cabinet-role">Join Convinor</div>
+                <p class="cabinet-year">Final Year Degree
+            </div>
+            <div class="cabinet-card">
+                <div class="cabinet-avatar">AJ</div>
+                <h3>Ali Javad</h3>
+                <div class="cabinet-role">Join Convinor</div>
+                <p class="cabinet-year">Third Year Degree</p>
+            </div>
         </div>
-
-        <!-- Student Vice President -->
-        <div class="cabinet-card">
-            <div class="cabinet-avatar">VP</div>
-            <h3>Muhammad Rafi</h3>
-            <div class="cabinet-role">Vice President</div>
-            <p class="cabinet-year">Fourth Year Degree</p>
-        </div>
-
-        <!-- Student Secretary -->
-        <div class="cabinet-card">
-            <div class="cabinet-avatar">GS</div>
-            <h3>Muhammad Hashim</h3>
-            <div class="cabinet-role">General Secretary</div>
-            <p class="cabinet-year">Fourth Year Degree</p>
-        </div>
-
-        <!-- Joint Secretary -->
-        <div class="cabinet-card">
-            <div class="cabinet-avatar">JS</div>
-            <h3>Ali Javad</h3>
-            <div class="cabinet-role">Joint Convenor</div>
-            <p class="cabinet-year">Third Year Degree</p>
-        </div>
-    </div>
-</section>
+    </section>
 
 <!-- Timeline Section -->
-<section id="initiatives">
-    <h2 class="section-title">Union Initiatives Calendar</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>July - Union Oath taking</h3>
-                <p>Cabinet cabinet members formally pledge their commitment towards college rules and welfare development.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>September - Arts Festival</h3>
-                <p>An amazing inter-house festival showcasing Islamic songs, calligraphy, oratorical contests, and arts.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>December - Sports Meet</h3>
-                <p>A friendly sports tournament testing strength, teamwork, and athletic capacities of student groups.</p>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <!-- Suggestions Box -->
 <section id="suggestions">

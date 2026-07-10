@@ -837,22 +837,22 @@
     </section>
 
     <section id="courses">
-        <h2 class="section-title">Courses We Offer</h2>
+        <h2 class="section-title">Courses Offered</h2>
         <div class="courses-grid">
             <div class="card">
-                <h3>Wafy / Wafiyya Course</h3>
-                <p>A comprehensive integrated curriculum blending classical Islamic studies with university degrees in
-                    various disciplines.</p>
+                <h3>SNEC Stream</h3>
+                <p>Comprehensive Sharee'a program integrating Islamic jurisprudence, theology, Arabic linguistics, and
+                    classical literature.</p>
             </div>
             <div class="card">
-                <h3>Arts & Commerce</h3>
-                <p>Pre-university secondary schooling and undergraduate programs in Humanities, English Literature, and
-                    Commerce.</p>
-            </div>
-            <div class="card">
-                <h3>Hifz-ul-Quran</h3>
-                <p>A specialized department for students who wish to memorize the Holy Quran with proper rules of Tajweed.
+                <h3>Plus Two Level</h3>
+                <p>Offering recognized senior secondary courses in Commerce and Humanities streams with moral studies.
                 </p>
+            </div>
+            <div class="card">
+                <h3>Degree Programs</h3>
+                <p>Undergraduate courses including BA English and BA Sociology, coupled with intensive
+                    Islamic education.</p>
             </div>
         </div>
     </section>
@@ -925,7 +925,7 @@
 
     <section id="developer">
         <div class="developer-box">
-            <h2>Developer Profile</h2>
+            
             <div class="developer-profile">
                 <div class="developer-photo-frame">
                     <img src="{{ asset('gallery_images/college/yaseen.png') }}" alt="Developer Muhammeed Yaseen E A">
@@ -938,9 +938,7 @@
                         with a premium, seamless user interface to showcase Shamsul Ulama Islamic & Arts College. Muhammed
                         Yaseen E A is a student at this college.
                     </p>
-                    <div class="developer-links">
-                        <a href="https://wa.me/919747064013" class="dev-link-btn" target="_blank">Contact Developer</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
