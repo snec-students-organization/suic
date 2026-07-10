@@ -1259,11 +1259,11 @@
             <p>Have a great idea or feedback for MASA? Submit your suggestions directly to the cabinet panel anonymously
                 or with your details.</p>
 
-            <form action="https://formsubmit.co/masasuic03@gmail.com" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_subject" value="New MASA Student Suggestion">
+            <form action="{{ route('masa.suggestion') }}" method="POST">
+                @csrf
+
                 <input type="text" name="student_name" placeholder="Your Name (Optional)">
+
                 <select name="class_year" required>
                     <option value="" disabled selected>Select Your Class</option>
                     <option value="plus_one">Plus One</option>
@@ -1273,20 +1273,23 @@
                     <option value="degree_3">Degree 3rd Year</option>
                     <option value="degree_4">Degree 4th Year</option>
                 </select>
+
                 <select name="wing_target" required>
                     <option value="" disabled selected>Select Wing Associated</option>
-                    <option value="dawah">Literary wing</option>
-                    <option value="literary">Library wing</option>
-                    <option value="welfare">Cultural sphere </option>
+                    <option value="dawah">Literary Wing</option>
+                    <option value="literary">Library Wing</option>
+                    <option value="welfare">Cultural Sphere</option>
                     <option value="media">Media Wing</option>
-                    <option value="sports">store board </option>
-                    <option value="sports">Medical Wing</option>
-                    <option value="general">Social Affairs</option>
-                    <option value="general">Creative Cummune</option>
+                    <option value="sports">Store Board</option>
+                    <option value="medical">Medical Wing</option>
+                    <option value="social">Social Affairs</option>
+                    <option value="creative">Creative Commune</option>
                     <option value="general">General Union Suggestion</option>
                 </select>
+
                 <textarea name="suggestion" rows="5" placeholder="Share your ideas or feedback here..."
                     required></textarea>
+
                 <button type="submit">Submit to MASA Cabinet ➜</button>
             </form>
         </div>
@@ -1327,85 +1330,6 @@
                     menu.classList.remove('show');
                 }
             }
-        }
-
-        // Handle suggestion form submission via AJAX
-        var suggestionForm = document.querySelector("#suggestions form");
-        if (suggestionForm) {
-            suggestionForm.addEventListener("submit", function (event) {
-                event.preventDefault();
-
-                var button = suggestionForm.querySelector("button[type='submit']");
-                var originalText = button.innerHTML;
-
-                // Create status message container if it doesn't exist
-                var statusMessage = document.getElementById("suggestion-status");
-                if (!statusMessage) {
-                    statusMessage = document.createElement("div");
-                    statusMessage.id = "suggestion-status";
-                    statusMessage.style.marginTop = "15px";
-                    statusMessage.style.padding = "12px 20px";
-                    statusMessage.style.borderRadius = "8px";
-                    statusMessage.style.fontSize = "15px";
-                    statusMessage.style.fontWeight = "500";
-                    statusMessage.style.transition = "all 0.3s ease";
-                    suggestionForm.appendChild(statusMessage);
-                }
-
-                // Set loading state
-                button.disabled = true;
-                button.innerHTML = "Submitting Suggestion... ⏳";
-                statusMessage.style.display = "none";
-
-                var formData = {};
-                var inputs = suggestionForm.querySelectorAll("input, textarea, select");
-                inputs.forEach(function (input) {
-                    if (input.name) {
-                        formData[input.name] = input.value;
-                    }
-                });
-
-                fetch("https://formsubmit.co/ajax/masasuic03@gmail.com", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
-                    },
-                    body: JSON.stringify(formData)
-                })
-                    .then(function (response) {
-                        return response.json();
-                    })
-                    .then(function (data) {
-                        button.disabled = false;
-                        button.innerHTML = originalText;
-
-                        if (data.success === "true" || data.success === true) {
-                            statusMessage.textContent = "✓ Thank you! Your suggestion has been submitted successfully to MASA Cabinet.";
-                            statusMessage.style.color = "#155724";
-                            statusMessage.style.backgroundColor = "#d4edda";
-                            statusMessage.style.border = "1px solid #c3e6cb";
-                            statusMessage.style.display = "block";
-                            suggestionForm.reset();
-                        } else {
-                            statusMessage.textContent = "✗ Oops! " + (data.message || "Something went wrong. Please try again.");
-                            statusMessage.style.color = "#721c24";
-                            statusMessage.style.backgroundColor = "#f8d7da";
-                            statusMessage.style.border = "1px solid #f5c6cb";
-                            statusMessage.style.display = "block";
-                        }
-                    })
-                    .catch(function (error) {
-                        button.disabled = false;
-                        button.innerHTML = originalText;
-
-                        statusMessage.textContent = "✗ Connection error. Please check your network and try again.";
-                        statusMessage.style.color = "#721c24";
-                        statusMessage.style.backgroundColor = "#f8d7da";
-                        statusMessage.style.border = "1px solid #f5c6cb";
-                        statusMessage.style.display = "block";
-                    });
-            });
         }
     </script>
 </body>
