@@ -81,43 +81,7 @@
         visibility: hidden;
     }
 
-    /* Global Button */
-    .btn {
-        display: inline-block;
-        padding: 14px 32px;
-        background: var(--color-accent);
-        color: var(--color-primary-dark);
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 15px;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        border: 2px solid var(--color-accent);
-        box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
 
-    .btn:hover {
-        transform: translateY(-3px);
-        background: transparent;
-        color: var(--color-accent);
-        box-shadow: 0 10px 25px rgba(197, 160, 89, 0.4);
-    }
-
-    .btn-secondary {
-        background: transparent;
-        color: white;
-        border-color: rgba(255, 255, 255, 0.5);
-        box-shadow: none;
-    }
-
-    .btn-secondary:hover {
-        background: white;
-        color: var(--color-primary-dark);
-        border-color: white;
-        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    }
 
     /* Sections Base Styling */
     section {
