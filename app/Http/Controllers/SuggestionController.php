@@ -31,7 +31,7 @@ Suggestion:
 ";
 
         Mail::raw($message, function ($mail) {
-            $mail->to('contact@suic.online')
+            $mail->to('masasuic03@gmail.com')
                 ->subject('New MASA Student Suggestion');
         });
 
