@@ -285,7 +285,7 @@
         <a href="{{ route('gallery') }}">🖼 Gallery</a>
         <a href="{{ route('masa') }}">🤝 MASA</a>
         <a href="{{ route('home') }}#contact">📞 Contact</a>
-        <a href="{{ route('home') }}#developer">💻 Developer</a>
+
     </div>
 
     <section class="hero">
@@ -308,61 +308,61 @@
 
     <section class="gallery">
 
-    <div class="gallery-item">
-        <img src="{{ asset('gallery_images/college/college4.JPG') }}" alt="">
-        <div class="overlay">📸</div>
-        <div class="caption">
-            <h3>Campus View</h3>
-            <p></p>
+        <div class="gallery-item">
+            <img src="{{ asset('gallery_images/college/college4.JPG') }}" alt="">
+            <div class="overlay">📸</div>
+            <div class="caption">
+                <h3>Campus View</h3>
+                <p></p>
+            </div>
         </div>
-    </div>
 
-    <div class="gallery-item">
-        <img src="{{ asset('gallery_images/college/class3.JPG') }}" alt="">
-        <div class="overlay">📖</div>
-        <div class="caption">
-            <h3>Classroom</h3>
-            <p></p>
+        <div class="gallery-item">
+            <img src="{{ asset('gallery_images/college/class3.JPG') }}" alt="">
+            <div class="overlay">📖</div>
+            <div class="caption">
+                <h3>Classroom</h3>
+                <p></p>
+            </div>
         </div>
-    </div>
 
-    <div class="gallery-item">
-        <img src="{{ asset('gallery_images/college/Library.png') }}" alt="">
-        <div class="overlay">📚</div>
-        <div class="caption">
-            <h3>Library</h3>
-            <p></p>
+        <div class="gallery-item">
+            <img src="{{ asset('gallery_images/college/Library.png') }}" alt="">
+            <div class="overlay">📚</div>
+            <div class="caption">
+                <h3>Library</h3>
+                <p></p>
+            </div>
         </div>
-    </div>
 
-    <div class="gallery-item">
-        <img src="{{ asset('gallery_images/college/cup.JPG') }}" alt="">
-        <div class="overlay">🎤</div>
-        <div class="caption">
-            <h3>Sports</h3>
-            <p></p>
+        <div class="gallery-item">
+            <img src="{{ asset('gallery_images/college/cup.JPG') }}" alt="">
+            <div class="overlay">🎤</div>
+            <div class="caption">
+                <h3>Sports</h3>
+                <p></p>
+            </div>
         </div>
-    </div>
 
-    <div class="gallery-item">
-        <img src="{{ asset('gallery_images/college/class2.JPG') }}" alt="">
-        <div class="overlay">🎓</div>
-        <div class="caption">
-            <h3>Education</h3>
-            <p></p>
+        <div class="gallery-item">
+            <img src="{{ asset('gallery_images/college/class2.JPG') }}" alt="">
+            <div class="overlay">🎓</div>
+            <div class="caption">
+                <h3>Education</h3>
+                <p></p>
+            </div>
         </div>
-    </div>
 
-    <div class="gallery-item">
-        <img src="{{ asset('gallery_images/college/achivment.JPG') }}" alt="">
-        <div class="overlay">🏆</div>
-        <div class="caption">
-            <h3>Achievements</h3>
-            <p></p>
+        <div class="gallery-item">
+            <img src="{{ asset('gallery_images/college/achivment.JPG') }}" alt="">
+            <div class="overlay">🏆</div>
+            <div class="caption">
+                <h3>Achievements</h3>
+                <p></p>
+            </div>
         </div>
-    </div>
 
-</section>
+    </section>
 
     <div id="lightbox">
         <span id="close" onclick="closeLightbox()">&times;</span>
@@ -403,4 +403,5 @@
     </script>
 
 </body>
-</html>     
+
+</html>

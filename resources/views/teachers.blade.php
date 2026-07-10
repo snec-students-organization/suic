@@ -20,9 +20,9 @@
         }
 
         body {
-    background: linear-gradient(rgba(0, 40, 30, .9), rgba(1, 51, 28, 0.9)),
-        url('{{ asset("gallery_images/college/college3.jpg") }}');
-}
+            background: linear-gradient(rgba(0, 40, 30, .9), rgba(1, 51, 28, 0.9)),
+                url('{{ asset("gallery_images/college/college3.jpg") }}');
+        }
 
         .teachers-section {
             padding: 80px 8%;
@@ -116,87 +116,87 @@
         }
 
         /* 3-dot menu button */
-.menu-btn{
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,.2);
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, .2);
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
 
-.menu-content{
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    background: rgba(0,20,15,.95);
-    backdrop-filter: blur(15px);
-    border-radius: 15px;
-    min-width: 180px;
-    overflow: hidden;
-    display: none;
-    z-index: 1000;
-}
+        .menu-content {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: rgba(0, 20, 15, .95);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            min-width: 180px;
+            overflow: hidden;
+            display: none;
+            z-index: 1000;
+        }
 
-.menu-content.show{
-    display: block;
-}
+        .menu-content.show {
+            display: block;
+        }
 
-.menu-content a{
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    transition: .3s;
-}
+        .menu-content a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+            transition: .3s;
+        }
 
-.menu-content a:hover{
-    background: rgba(212,175,55,.2);
-    color: #d4af37;
-}
+        .menu-content a:hover {
+            background: rgba(212, 175, 55, .2);
+            color: #d4af37;
+        }
     </style>
 </head>
 
 <script>
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
-}
-
-document.addEventListener("click", function (e) {
-    if (!e.target.closest(".menu-btn") && !e.target.closest(".menu-content")) {
-        document.getElementById("menu").classList.remove("show");
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("show");
     }
-});
+
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest(".menu-btn") && !e.target.closest(".menu-content")) {
+            document.getElementById("menu").classList.remove("show");
+        }
+    });
 </script>
 
 <body>
 
-<!-- Three Dot Menu -->
-<div class="menu-btn" onclick="toggleMenu()">
-   ☰
-</div>
+    <!-- Three Dot Menu -->
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
 
-<div class="menu-content" id="menu">
-    <a href="{{ route('home') }}#index">🏠 Home</a>
-            <a href="{{ route('home') }}#about">ℹ️ About</a>
-            <a href="{{ route('teachers') }}">👨‍🏫 Teachers</a>
-            <a href="{{ route('management') }}">🏛️ Management</a>
-            <a href="{{ route('gallery') }}">🖼 Gallery</a>
-            <a href="{{ route('masa') }}">🤝 MASA (Union)</a>
-            <a href="{{ route('home') }}#contact">📞 Contact</a>
-            <a href="{{ route('home') }}#developer">💻 Developer</a>
-</div>
+    <div class="menu-content" id="menu">
+        <a href="{{ route('home') }}#index">🏠 Home</a>
+        <a href="{{ route('home') }}#about">ℹ️ About</a>
+        <a href="{{ route('teachers') }}">👨‍🏫 Teachers</a>
+        <a href="{{ route('management') }}">🏛️ Management</a>
+        <a href="{{ route('gallery') }}">🖼 Gallery</a>
+        <a href="{{ route('masa') }}">🤝 MASA (Union)</a>
+        <a href="{{ route('home') }}#contact">📞 Contact</a>
+
+    </div>
 
     <section class="teachers-section">
 

@@ -1061,7 +1061,7 @@
             <a href="{{ route('gallery') }}">🖼 Gallery</a>
             <a href="{{ route('masa') }}">🤝 MASA (Union)</a>
             <a href="{{ route('home') }}#contact">📞 Contact</a>
-            <a href="{{ route('home') }}#developer">💻 Developer</a>
+
         </div>
     </header>
 
@@ -1275,11 +1275,14 @@
                 </select>
                 <select name="wing_target" required>
                     <option value="" disabled selected>Select Wing Associated</option>
-                    <option value="dawah">Da'wah & Moral Wing</option>
-                    <option value="literary">Literary & Arts Wing</option>
-                    <option value="welfare">Social Welfare Wing</option>
-                    <option value="media">Media & IT Wing</option>
-                    <option value="sports">Sports & Health Wing</option>
+                    <option value="dawah">Literary wing</option>
+                    <option value="literary">Library wing</option>
+                    <option value="welfare">Cultural sphere </option>
+                    <option value="media">Media Wing</option>
+                    <option value="sports">store board </option>
+                    <option value="sports">Medical Wing</option>
+                    <option value="general">Social Affairs</option>
+                    <option value="general">Creative Cummune</option>
                     <option value="general">General Union Suggestion</option>
                 </select>
                 <textarea name="suggestion" rows="5" placeholder="Share your ideas or feedback here..."

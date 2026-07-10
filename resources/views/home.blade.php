@@ -1008,7 +1008,7 @@
             <a href="{{ route('gallery') }}">🖼 Gallery</a>
             <a href="{{ route('masa') }}">🤝 MASA (Union)</a>
             <a href="#contact" onclick="toggleMenu()">📞 Contact</a>
-            <a href="#developer" onclick="toggleMenu()">💻 Developer</a>
+            
         </div>
     </header>
 

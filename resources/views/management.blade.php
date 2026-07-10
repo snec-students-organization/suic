@@ -502,7 +502,7 @@
             <a href="{{ route('gallery') }}">🖼 Gallery</a>
             <a href="{{ route('masa') }}">🤝 MASA (Union)</a>
             <a href="{{ route('home') }}#contact">📞 Contact</a>
-            <a href="{{ route('home') }}#developer">💻 Developer</a>
+           
         </div>
     </header>
 
