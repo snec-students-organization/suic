@@ -9,7 +9,9 @@
     <title>@yield('title', 'Shamsul Ulama Islamic & Arts College')</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Common Layout Styles -->
     <style>
@@ -48,11 +50,17 @@
             color: var(--color-text-dark);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 80px; /* Offset for fixed header */
+            padding-top: 80px;
+            /* Offset for fixed header */
         }
 
         /* Headings */
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Cinzel', serif;
             font-weight: 700;
         }
@@ -160,7 +168,8 @@
             cursor: pointer;
             z-index: 1002;
             transition: transform 0.3s ease;
-            display: none; /* Hidden on desktop */
+            display: none;
+            /* Hidden on desktop */
         }
 
         #menuBtn:hover {
@@ -385,15 +394,21 @@
             header {
                 padding: 15px 5%;
             }
+
             header.scrolled {
                 padding: 12px 5%;
             }
+
             .nav-links {
-                display: none; /* Hide desktop nav */
+                display: none;
+                /* Hide desktop nav */
             }
+
             #menuBtn {
-                display: block; /* Show hamburger button */
+                display: block;
+                /* Show hamburger button */
             }
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -404,6 +419,7 @@
             body {
                 padding-top: 70px;
             }
+
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
@@ -432,7 +448,8 @@
             <a href="{{ route('home') }}#index" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
             <a href="{{ route('home') }}#about">About</a>
             <a href="{{ route('teachers') }}" class="{{ request()->routeIs('teachers') ? 'active' : '' }}">Teachers</a>
-            <a href="{{ route('management') }}" class="{{ request()->routeIs('management') ? 'active' : '' }}">Management</a>
+            <a href="{{ route('management') }}"
+                class="{{ request()->routeIs('management') ? 'active' : '' }}">Management</a>
             <a href="{{ route('gallery') }}" class="{{ request()->routeIs('gallery') ? 'active' : '' }}">Gallery</a>
             <a href="{{ route('masa') }}" class="{{ request()->routeIs('masa') ? 'active' : '' }}">MASA (Union)</a>
             <a href="{{ route('home') }}#contact">Contact</a>
@@ -443,13 +460,18 @@
 
         <!-- Animated Mobile Drawer Menu -->
         <div id="menu">
-            <a href="{{ route('home') }}#index" onclick="toggleMenu()" class="{{ request()->is('/') ? 'active' : '' }}">🏠 Home</a>
-            <a href="{{ route('home') }}#about" onclick="toggleMenu()">ℹ️ About</a>
-            <a href="{{ route('teachers') }}" onclick="toggleMenu()" class="{{ request()->routeIs('teachers') ? 'active' : '' }}">👨‍🏫 Teachers</a>
-            <a href="{{ route('management') }}" onclick="toggleMenu()" class="{{ request()->routeIs('management') ? 'active' : '' }}">🏛️ Management</a>
-            <a href="{{ route('gallery') }}" onclick="toggleMenu()" class="{{ request()->routeIs('gallery') ? 'active' : '' }}">🖼 Gallery</a>
-            <a href="{{ route('masa') }}" onclick="toggleMenu()" class="{{ request()->routeIs('masa') ? 'active' : '' }}">🤝 MASA (Union)</a>
-            <a href="{{ route('home') }}#contact" onclick="toggleMenu()">📞 Contact</a>
+            <a href="{{ route('home') }}#index" onclick="toggleMenu()"
+                class="{{ request()->is('/') ? 'active' : '' }}"> Home</a>
+            <a href="{{ route('home') }}#about" onclick="toggleMenu()">ℹ About</a>
+            <a href="{{ route('teachers') }}" onclick="toggleMenu()"
+                class="{{ request()->routeIs('teachers') ? 'active' : '' }}"> Teachers</a>
+            <a href="{{ route('management') }}" onclick="toggleMenu()"
+                class="{{ request()->routeIs('management') ? 'active' : '' }}"> Management</a>
+            <a href="{{ route('gallery') }}" onclick="toggleMenu()"
+                class="{{ request()->routeIs('gallery') ? 'active' : '' }}"> Gallery</a>
+            <a href="{{ route('masa') }}" onclick="toggleMenu()"
+                class="{{ request()->routeIs('masa') ? 'active' : '' }}"> MASA (Union)</a>
+            <a href="{{ route('home') }}#contact" onclick="toggleMenu()"> Contact</a>
         </div>
     </header>
 
@@ -466,9 +488,10 @@
             <div class="footer-col">
                 <h3>Shamsul Ulama Islamic & Arts College</h3>
                 <p>
-                    Blending traditional Islamic wisdom with modern academic curriculum to shape intellectual, ethical, and spiritual leaders of tomorrow.
+                    Blending traditional Islamic wisdom with modern academic curriculum to shape intellectual, ethical,
+                    and spiritual leaders of tomorrow.
                 </p>
-                <p><strong>Affiliated to SNEC (Samastha Nayee College Council)</strong></p>
+                <p><strong>Affiliated to SNEC (Samastha National Education Council)</strong></p>
             </div>
 
             <!-- Col 2: Quick Navigation Links -->
@@ -487,11 +510,13 @@
             <!-- Col 3: Contact details & Whatsapp button -->
             <div class="footer-col footer-contact-info">
                 <h3>Contact Info</h3>
-                <p><span>📍</span> Shamsul Ulama Islamic & Arts College,<br>Pathiyankara, Thrikkunnapuzha, Alappuzha, Kerala</p>
+                <p><span>📍</span> Shamsul Ulama Islamic & Arts College,<br>Pathiyankara, Thrikkunnapuzha, Alappuzha,
+                    Kerala</p>
                 <p><span>📧</span> shamsululamasnecalp@gmail.com</p>
                 <p><span>📞</span> +91 92887 59269, +91 97470 64013</p>
                 <div style="margin-top: 15px;">
-                    <a href="https://wa.me/919747064013?text=I%20am%20interested%20in%20Admission%20enquiry" target="_blank" class="whatsapp-btn-pulse">
+                    <a href="https://wa.me/919747064013?text=I%20am%20interested%20in%20Admission%20enquiry"
+                        target="_blank" class="whatsapp-btn-pulse">
                         💬 Admission Enquiry
                     </a>
                 </div>
@@ -501,7 +526,8 @@
         <!-- Footer Bottom Section -->
         <div class="footer-bottom">
             <p>&copy; 2026 Shamsul Ulama Islamic & Arts College. All Rights Reserved. Managed by SNEC.</p>
-            <p class="dev-credit">Designed & Developed by <a href="#developer" onclick="scrollToDeveloper()">Muhammed Yaseen E A</a></p>
+            <p class="dev-credit">Designed & Developed by <a href="#developer" onclick="scrollToDeveloper()">Muhammed
+                    Yaseen E A</a></p>
         </div>
     </footer>
     @show
@@ -526,7 +552,7 @@
         });
 
         // Add scrolled class to header for extra premium sticky effect
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             var header = document.getElementById("mainHeader");
             if (header) {
                 if (window.scrollY > 50) {

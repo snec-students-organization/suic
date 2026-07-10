@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SuggestionController;
-
+use App\Http\Controllers\ContactController;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/teachers', [PageController::class, 'teachers'])->name('teachers');
@@ -11,3 +11,5 @@ Route::get('/management', [PageController::class, 'management'])->name('manageme
 Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
 Route::get('/masa', [PageController::class, 'masa'])->name('masa');
 Route::post('/masa/suggestion', [SuggestionController::class, 'submit'])->name('masa.suggestion');
+Route::post('/contact', [ContactController::class, 'send'])
+    ->name('contact.send');
