@@ -8,23 +8,39 @@
         .header-logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
+            flex-shrink: 0;       /* prevent logo from compressing */
+        }
+
+        /* Override logo-wrap inside the MASA header link */
+        .header-logo-container .logo-wrap h1 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .header-logo {
-            height: 44px;
-            width: 44px;
+            height: 40px;
+            width: 40px;
             border-radius: 50%;
             border: 2px solid var(--color-accent);
             object-fit: cover;
             background: white;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            flex-shrink: 0;
         }
 
         .header-logo-container:hover .header-logo {
             transform: rotate(360deg);
+        }
+
+        @media(max-width: 768px) {
+            .header-logo {
+                height: 32px;
+                width: 32px;
+            }
         }
 
         /* MASA Intro Loader */
@@ -115,17 +131,19 @@
 
         /* Sections Base Styling */
         section {
-            padding: 100px 8%;
+            padding: clamp(80px, 6.5vw, 112px) max(5vw, calc((100vw - 1280px) / 2));
             position: relative;
         }
 
         .section-title {
             text-align: center;
-            font-size: 38px;
-            margin-bottom: 50px;
+            font-size: clamp(32px, 2.7vw, 42px);
+            margin: 0 auto 50px;
+            max-width: 900px;
             color: var(--color-primary);
             position: relative;
             padding-bottom: 20px;
+            line-height: 1.25;
         }
 
         .section-title::after {
@@ -140,20 +158,22 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            min-height: 700px;
+            height: auto;
+            min-height: clamp(650px, 88svh, 820px);
             background: linear-gradient(135deg, var(--color-primary-dark), #032b1f);
             background-image: var(--islamic-pattern-dark), linear-gradient(135deg, var(--color-primary-dark), #032b1f);
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+            gap: clamp(40px, 5vw, 80px);
             align-items: center;
             color: white;
-            padding-top: 60px;
+            padding-top: clamp(105px, 11vh, 140px);
+            padding-bottom: clamp(70px, 8vh, 105px);
         }
 
         .hero-text {
             z-index: 2;
+            max-width: 760px;
         }
 
         .hero-bismillah {
@@ -164,8 +184,8 @@
         }
 
         .hero h1 {
-            font-size: 44px;
-            line-height: 1.2;
+            font-size: clamp(38px, 3.2vw, 54px);
+            line-height: 1.15;
             margin-bottom: 20px;
             color: var(--color-accent);
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -173,7 +193,8 @@
         }
 
         .hero p {
-            font-size: 19px;
+            font-size: clamp(16px, 1.25vw, 19px);
+            line-height: 1.7;
             margin-bottom: 35px;
             color: rgba(255, 255, 255, 0.85);
             max-width: 650px;
@@ -203,10 +224,11 @@
 
         .arch-frame {
             width: 100%;
-            max-width: 380px;
-            height: 480px;
+            max-width: clamp(320px, 29vw, 420px);
+            aspect-ratio: 1;
+            height: auto;
             position: relative;
-            border-radius: 190px 190px 25px 25px;
+            border-radius: 50%;
             border: 3px solid var(--color-accent);
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
             overflow: hidden;
@@ -217,7 +239,7 @@
         .arch-frame-inner {
             width: 100%;
             height: 100%;
-            border-radius: 180px 180px 15px 15px;
+            border-radius: 50%;
             overflow: hidden;
             position: relative;
             display: flex;
@@ -243,7 +265,7 @@
             background-image: var(--islamic-pattern-dark);
             color: white;
             text-align: center;
-            padding: 100px 8%;
+            padding: clamp(80px, 6.5vw, 105px) max(5vw, calc((100vw - 1280px) / 2));
             border-top: 2px solid var(--color-accent);
             border-bottom: 2px solid var(--color-accent);
         }
@@ -278,7 +300,7 @@
         }
 
         .quran-verse-card h2 {
-            font-size: 38px;
+            font-size: clamp(32px, 2.8vw, 40px);
             color: var(--color-accent-light);
             margin-bottom: 20px;
             line-height: 1.8;
@@ -309,8 +331,11 @@
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1.1fr;
-            gap: 60px;
+            gap: clamp(50px, 6vw, 90px);
             align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .about-image {
@@ -318,8 +343,12 @@
             justify-content: center;
         }
 
+        .about-image .arch-frame {
+            max-width: 350px;
+        }
+
         .about-text h3 {
-            font-size: 32px;
+            font-size: clamp(28px, 2.3vw, 36px);
             color: var(--color-primary);
             margin-bottom: 20px;
         }
@@ -349,8 +378,12 @@
 
         .wings-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
         }
 
         .card {
@@ -365,6 +398,7 @@
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
 
         .card::after {
@@ -414,16 +448,19 @@
             background: var(--color-primary);
             background-image: var(--islamic-pattern-dark);
             color: white;
-            padding: 80px 8%;
+            padding: clamp(65px, 5.5vw, 85px) max(5vw, calc((100vw - 1280px) / 2));
             border-top: 2px solid var(--color-accent);
             border-bottom: 2px solid var(--color-accent);
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 40px;
             text-align: center;
+            width: 100%;
+            max-width: 1050px;
+            margin: 0 auto;
         }
 
         .stat-item {
@@ -464,9 +501,12 @@
 
         .cabinet-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px auto 0;
+            align-items: stretch;
         }
 
         .cabinet-card {
@@ -479,6 +519,7 @@
             padding: 35px 25px;
             transition: all 0.3s ease;
             position: relative;
+            height: 100%;
         }
 
         .cabinet-card::before {
@@ -627,7 +668,7 @@
         #suggestions {
             background: var(--color-bg-light);
             background-image: var(--islamic-pattern);
-            padding: 90px 8%;
+            padding: clamp(75px, 6vw, 95px) max(5vw, calc((100vw - 1280px) / 2));
             display: flex;
             justify-content: center;
             border-top: 1px solid var(--color-border);
@@ -642,6 +683,11 @@
             border: 1px solid rgba(197, 160, 89, 0.25);
             box-shadow: var(--shadow-md);
             text-align: center;
+        }
+
+        .masa-footer-logo {
+            width: 60px;
+            height: 60px;
         }
 
         .contact-box h2 {
@@ -703,14 +749,94 @@
             box-shadow: 0 8px 25px rgba(4, 44, 32, 0.4);
         }
 
-        /* Mobile Responsive styling overrides */
-        @media(max-width:992px) {
+        /* ================================================
+           MASA PAGE — RESPONSIVE STYLES
+        ================================================ */
+
+        /* Large tablets / small laptops (1200px) */
+        @media (max-width: 1200px) {
+            section {
+                padding: 76px 6%;
+            }
+
+            .quran {
+                padding: 76px 6%;
+            }
+
+            .stats {
+                padding: 64px 6%;
+            }
+
+            #suggestions {
+                padding: 72px 6%;
+            }
+
+            .hero {
+                min-height: 650px;
+                padding: 105px 6% 72px;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .arch-frame {
+                max-width: 320px;
+            }
+
+            .wings-grid,
+            .cabinet-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 24px;
+            }
+
+            .card {
+                padding: 34px 24px;
+            }
+
+            .cabinet-card {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Tablet / small desktop (992px) */
+        @media (max-width: 992px) {
+            section {
+                padding: 70px 5%;
+            }
+
+            .quran,
+            #suggestions {
+                padding: 64px 5%;
+            }
+
+            .stats {
+                padding: 58px 5%;
+            }
+
+            /* Hero: stack vertically */
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
                 height: auto;
-                padding-bottom: 60px;
-                padding-top: 100px;
+                min-height: auto;
+                padding: 100px 5% 65px;
+                gap: 30px;
+            }
+
+            .hero-text {
+                max-width: 760px;
+                margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 17px;
+                max-width: 100%;
             }
 
             .hero-btn-group {
@@ -718,43 +844,438 @@
             }
 
             .hero-image-container {
-                margin-top: 20px;
+                margin-top: 10px;
             }
 
+            .arch-frame {
+                max-width: 280px;
+            }
+
+            /* About: stack vertically */
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
+                text-align: center;
             }
 
+            .about-image {
+                order: -1;
+            }
+
+            .about-image .arch-frame {
+                max-width: 240px;
+                margin: 0 auto;
+            }
+
+            /* Timeline: single column */
             .timeline::before {
-                left: 40px;
+                left: 24px;
             }
 
             .timeline-item {
                 width: 100%;
-                padding-left: 80px;
-                padding-right: 20px;
+                padding-left: 60px;
+                padding-right: 15px;
                 text-align: left !important;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
+                left: 0 !important;
             }
 
             .timeline-dot {
-                left: 32px !important;
+                left: 16px !important;
                 right: auto !important;
+            }
+
+            /* Wings grid: 2 columns */
+            .wings-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            /* Cabinet: 2 columns */
+            .cabinet-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            /* Stats: 2 columns */
+            .stats-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
         }
 
-        @media(max-width:768px) {
+        /* Large desktop and ultra-wide screens */
+        @media (min-width: 1600px) {
             .hero h1 {
-                font-size: 32px;
+                max-width: 760px;
+            }
+
+            .wings-grid,
+            .about-grid,
+            .cabinet-grid {
+                max-width: 1280px;
+            }
+
+            .contact-box {
+                max-width: 800px;
+            }
+        }
+
+        /* Mobile portrait (768px) */
+        @media (max-width: 768px) {
+            section {
+                padding: 48px 5%;
+            }
+
+            /* Compact intro screen */
+            .intro-box {
+                max-width: 360px;
+                padding: 20px;
+            }
+
+            .intro-logo-wrap {
+                margin-bottom: 14px;
+            }
+
+            .intro-logo {
+                width: 82px;
+                height: 82px;
+                padding: 4px;
+            }
+
+            .arabic-title {
+                margin-top: 10px;
+                font-size: 30px;
+            }
+
+            .verse-translation {
+                margin-top: 8px;
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .intro-college-name {
+                margin-top: 16px;
+                font-size: 18px;
+                line-height: 1.35;
+            }
+
+            .location-tag {
+                margin-top: 7px;
+                font-size: 10px;
+                letter-spacing: 1.4px;
+            }
+
+            /* Smaller header branding */
+            .header-logo {
+                width: 28px;
+                height: 28px;
+            }
+
+            .header-logo-container {
+                gap: 7px;
+                min-width: 0;
+            }
+
+            .header-logo-container .logo-wrap h1 {
+                font-size: 14px;
+            }
+
+            .header-logo-container .logo-wrap h2 {
+                font-size: 8px;
+            }
+
+            /* Hero */
+            .hero {
+                min-height: auto;
+                padding: 72px 5% 42px;
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                margin-bottom: 24px;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .hero-bismillah {
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+
+            .hero-btn-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 240px;
+                padding: 11px 16px;
+                font-size: 13px;
+                text-align: center;
+            }
+
+            .hero-snec {
+                margin-top: 14px;
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            /* Arch frame: smaller circle */
+            .arch-frame {
+                max-width: 165px;
+            }
+
+            /* Section titles */
+            .section-title {
+                margin-bottom: 28px;
+                padding-bottom: 15px;
+                font-size: 24px;
+            }
+
+            /* Quran verse card */
+            .quran {
+                padding: 48px 5%;
+            }
+
+            .quran-verse-card {
+                margin-bottom: 25px;
+                padding: 28px 16px;
+                border-radius: 18px;
             }
 
             .quran-verse-card h2 {
-                font-size: 28px;
+                margin-bottom: 14px;
+                font-size: 23px;
                 line-height: 1.6;
+            }
+
+            .quran-verse-card p {
+                font-size: 13px;
+            }
+
+            .quran-verse-card span {
+                font-size: 10px;
+                letter-spacing: 1.4px;
+            }
+
+            /* About text */
+            .about-text h3 {
+                margin-bottom: 14px;
+                font-size: 21px;
+            }
+
+            .about-text p {
+                margin-bottom: 18px;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .about-tagline {
+                font-size: 10px;
+                letter-spacing: 1.4px;
+            }
+
+            .about-image .arch-frame {
+                max-width: 155px;
+            }
+
+            /* Wings: single column */
+            .wings-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card {
+                padding: 24px 18px;
+                border-radius: 16px;
+            }
+
+            .card-icon {
+                margin-bottom: 12px;
+                font-size: 28px;
+            }
+
+            .card h3 {
+                margin-bottom: 9px;
+                font-size: 18px;
+            }
+
+            .card p {
+                font-size: 13px;
+            }
+
+            /* Stats: single column */
+            .stats {
+                padding: 48px 5%;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .stat-badge {
+                width: 68px;
+                height: 68px;
+                margin-bottom: 12px;
+            }
+
+            .stat-item h2 {
+                font-size: 24px;
+            }
+
+            .stat-item p {
+                font-size: 11px;
+                letter-spacing: 1.2px;
+            }
+
+            /* Cabinet: single column */
+            .cabinet-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cabinet-card {
+                padding: 22px 16px;
+                border-radius: 16px;
+            }
+
+            .cabinet-avatar {
+                width: 72px;
+                height: 72px;
+                margin-bottom: 14px;
+                font-size: 21px;
+            }
+
+            .cabinet-card h3 {
+                font-size: 17px;
+            }
+
+            .cabinet-role {
+                margin-bottom: 10px;
+                font-size: 10px;
+            }
+
+            .cabinet-year {
+                font-size: 12px;
+            }
+
+            /* Timeline */
+            .timeline {
+                padding: 10px 0;
+            }
+
+            .timeline-content {
+                padding: 18px;
+            }
+
+            .timeline-content h3 {
+                font-size: 17px;
+            }
+
+            .timeline-content p {
+                font-size: 13px;
+            }
+
+            /* Contact / Suggestions */
+            #suggestions {
+                padding: 48px 5%;
+            }
+
+            .contact-box {
+                padding: 28px 18px;
+                border-radius: 20px;
+            }
+
+            .contact-box h2 {
+                font-size: 21px;
+            }
+
+            .contact-box p {
+                margin-bottom: 22px;
+                font-size: 13px;
+            }
+
+            .contact-box input,
+            .contact-box textarea,
+            .contact-box select {
+                padding: 13px 16px;
+                font-size: 14px;
+            }
+
+            .contact-box button {
+                padding: 13px;
+                font-size: 13px;
+            }
+
+            .masa-footer-logo {
+                width: 46px !important;
+                height: 46px !important;
+            }
+        }
+
+        /* Small mobile (480px) */
+        @media (max-width: 480px) {
+            section {
+                padding: 42px 4%;
+            }
+
+            .hero {
+                padding: 68px 4% 38px;
+            }
+
+            .hero h1 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .arch-frame {
+                max-width: 140px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .quran-verse-card h2 {
+                font-size: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 24px 14px;
+            }
+
+            .about-text h3 {
+                font-size: 19px;
+            }
+
+            .intro-logo {
+                width: 72px;
+                height: 72px;
+            }
+
+            .arabic-title {
+                font-size: 26px;
+            }
+
+            .intro-college-name {
+                font-size: 16px;
+            }
+
+            .about-image .arch-frame {
+                max-width: 135px;
             }
         }
     </style>
@@ -803,7 +1324,7 @@
                 <div class="arch-frame-inner">
                     <img src="{{ asset('gallery_images/college/masalogo.png') }}" alt="MASA UNION Logo">
                     <div
-                        style="position: absolute; inset: 0; box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35); pointer-events: none; border-radius: 180px 180px 15px 15px;">
+                        style="position: absolute; inset: 0; box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35); pointer-events: none; border-radius: 50%;">
                     </div>
                 </div>
             </div>
@@ -828,7 +1349,7 @@
             <div class="about-image">
                 <div class="arch-frame">
                     <div class="arch-frame-inner">
-                        <img src="{{ asset('images/college2.JPG') }}" alt="College Campus Activity">
+                        <img src="{{ asset('gallery_images/college/masalogo.png') }}" alt="College Campus Activity">
                     </div>
                 </div>
             </div>
@@ -923,13 +1444,13 @@
                 <div class="cabinet-avatar">FA</div>
                 <h3>Fayiz V A</h3>
                 <div class="cabinet-role">Chairman</div>
-                <p class="cabinet-year">Final Year Digree
+                <p class="cabinet-year">Final Year Digree</p>
             </div>
             <div class="cabinet-card">
                 <div class="cabinet-avatar">AJ</div>
                 <h3>Abdul Javad</h3>
                 <div class="cabinet-role">Convinor</div>
-                <p class="cabinet-year">Third Year Digree
+                <p class="cabinet-year">Third Year Digree</p>
             </div>
             <div class="cabinet-card">
                 <div class="cabinet-avatar">BL</div>
@@ -941,19 +1462,19 @@
                 <div class="cabinet-avatar">SW</div>
                 <h3>Swalih</h3>
                 <div class="cabinet-role">Vice Chairman</div>
-                <p class="cabinet-year">Final Year Digree
+                <p class="cabinet-year">Final Year Digree</p>
             </div>
             <div class="cabinet-card">
                 <div class="cabinet-avatar">SH</div>
                 <h3>Shamnad</h3>
                 <div class="cabinet-role">Vice Chairman</div>
-                <p class="cabinet-year">Third Year Digree
+                <p class="cabinet-year">Third Year Digree</p>
             </div>
             <div class="cabinet-card">
                 <div class="cabinet-avatar">IB</div>
                 <h3>Ibrahim</h3>
                 <div class="cabinet-role">Join Convinor</div>
-                <p class="cabinet-year">Final Year Degree
+                <p class="cabinet-year">Final Year Degree</p>
             </div>
             <div class="cabinet-card">
                 <div class="cabinet-avatar">AJ</div>
@@ -1013,7 +1534,7 @@
 @section('footer')
     <footer>
         <div style="margin-bottom: 20px; display: inline-block;">
-            <img src="{{ asset('gallery_images/college/masalogo.png') }}" alt="MASA Logo"
+            <img src="{{ asset('gallery_images/college/masalogo.png') }}" alt="MASA Logo" class="masa-footer-logo"
                 style="height: 60px; width: 60px; border-radius: 50%; border: 2px solid var(--color-accent); padding: 3px; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
         </div>
         <h3>MANBAUL AFNAN STUDENTS' ASSOCIATION (MASA)</h3>

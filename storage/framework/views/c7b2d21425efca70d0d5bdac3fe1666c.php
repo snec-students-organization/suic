@@ -50,7 +50,7 @@
             color: var(--color-text-dark);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 80px;
+            padding-top: 72px;
             /* Offset for fixed header */
         }
 
@@ -70,16 +70,16 @@
             font-weight: 700;
         }
 
-        /* Sticky Glassmorphic Header */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 18px 8%;
+            padding: 14px 5%;          /* tighter default */
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;                 /* gap between logo & nav */
             background: rgba(4, 44, 32, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -90,7 +90,7 @@
         }
 
         header.scrolled {
-            padding: 12px 8%;
+            padding: 10px 5%;
             background: rgba(2, 26, 19, 0.95);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
@@ -99,42 +99,49 @@
             display: flex;
             flex-direction: column;
             text-decoration: none;
+            flex-shrink: 0;           /* don't let logo compress */
+            min-width: 0;
         }
 
         .logo-wrap h1 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             color: var(--color-accent);
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .logo-wrap h2 {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 500;
             color: white;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-top: 2px;
+            white-space: nowrap;
         }
 
         /* Desktop Nav Link Items */
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
         .nav-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-weight: 500;
-            font-size: 14px;
-            letter-spacing: 1px;
+            font-size: 13px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
-            padding: 8px 12px;
+            padding: 7px 10px;
             border-radius: 6px;
             transition: all 0.3s ease;
             position: relative;
+            white-space: nowrap;
         }
 
         .nav-links a::after {
@@ -390,40 +397,115 @@
         }
 
         /* Responsive Media Queries */
-        @media(max-width: 992px) {
+
+        /* Medium laptops (1400px): start shrinking nav */
+        @media(max-width: 1400px) {
+            .nav-links {
+                gap: 6px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+                padding: 6px 8px;
+            }
+        }
+
+        /* Large tablets / small laptops (1200px) */
+        @media(max-width: 1200px) {
             header {
-                padding: 15px 5%;
+                padding: 12px 3%;
             }
 
             header.scrolled {
-                padding: 12px 5%;
+                padding: 10px 3%;
+            }
+
+            .nav-links {
+                gap: 3px;
+            }
+
+            .nav-links a {
+                font-size: 10.5px;
+                padding: 5px 5px;
+                letter-spacing: 0.3px;
+            }
+
+            .logo-wrap h1 {
+                font-size: 15px;
+            }
+
+            .logo-wrap h2 {
+                font-size: 8px;
+                letter-spacing: 0.8px;
+            }
+        }
+
+        /* Tablet: hide desktop nav, show hamburger */
+        @media(max-width: 992px) {
+            header {
+                padding: 14px 5%;
+            }
+
+            header.scrolled {
+                padding: 11px 5%;
             }
 
             .nav-links {
                 display: none;
-                /* Hide desktop nav */
             }
 
             #menuBtn {
                 display: block;
-                /* Show hamburger button */
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+
+            .logo-wrap h1 {
+                font-size: 16px;
+            }
+
+            .logo-wrap h2 {
+                font-size: 9px;
+            }
         }
 
+        /* Mobile */
         @media(max-width: 768px) {
             body {
-                padding-top: 70px;
+                padding-top: 68px;
+            }
+
+            header {
+                padding: 12px 5%;
+            }
+
+            .logo-wrap h1 {
+                font-size: 15px;
+            }
+
+            .logo-wrap h2 {
+                display: none;
             }
 
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
                 gap: 10px;
+            }
+        }
+
+        /* Small mobile */
+        @media(max-width: 480px) {
+            header {
+                padding: 10px 4%;
+            }
+
+            .logo-wrap h1 {
+                font-size: 13px;
+                letter-spacing: 0.5px;
             }
         }
     </style>
